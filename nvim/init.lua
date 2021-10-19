@@ -1,13 +1,14 @@
 -- COLORS
-vim.cmd 'colo fogbell_light'
+-- vim.cmd 'colo fogbell_light'
+vim.cmd 'colo fogbell'
 
 require('plugins')
 -- CONFIGS
 require('fzf-config')
 require('autotag-config')
-require('ale-config')
 require('lsp-config')
 require('cmp-config')
+require('ale-config')
 
 -- SETUP
 local so = vim.api.nvim_set_option

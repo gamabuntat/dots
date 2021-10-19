@@ -21,4 +21,6 @@ return require('packer').startup(function()
 
   use 'jiangmiao/auto-pairs'
   use 'windwp/nvim-ts-autotag'
+  use 'ap/vim-css-color'
+  use 'tpope/vim-commentary'
 end)
