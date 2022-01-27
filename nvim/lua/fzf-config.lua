@@ -14,7 +14,7 @@ require'fzf-lua'.setup {
   },
 }
 
--- MAPPING
+-- MAPPINGS
 vim.api.nvim_set_keymap('n', ',t',
   "<cmd>lua require('fzf-lua').files()<CR>",
   { noremap = true, silent = true })

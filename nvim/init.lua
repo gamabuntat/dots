@@ -1,14 +1,29 @@
 -- COLORS
 -- vim.cmd 'colo fogbell_light'
-vim.cmd 'colo fogbell'
+-- vim.cmd 'colo fogbell'
+-- vim.cmd 'colo 256_noir'
+-- vim.cmd 'colo spacecamp'
+-- vim.cmd 'colo PaperColor'
+vim.g.tokyonight_style = "day"
+-- vim.g.tokyonight_style = "night"
+vim.g.tokyonight_transparent = true
+vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme catppuccin]]
 
 require('plugins')
 -- CONFIGS
-require('fzf-config')
+-- require('fzf-config')
+-- require('diffview-config')
 require('autotag-config')
+-- require('nvim-ts-autotag').setup({
+--   filetypes = { "html" , "xml", "javascriptreact", "typescriptreact", "tsx", "typescript.tsx" },
+-- })
 require('lsp-config')
 require('cmp-config')
 require('ale-config')
+require('kommentary-config')
+require('treesitter-config')
+require('stay-centered')
 
 -- SETUP
 local so = vim.api.nvim_set_option
@@ -19,20 +34,31 @@ so('swf', false)
 so('cot', 'menu,menuone,noselect')
 so('clipboard', 'unnamedplus')
 so('expandtab', true)
-so('sw', 2)
-so('tabstop', 2)
-so('sts', 0)
 so('laststatus', 2)
 so('shiftwidth', 2)
 so('updatetime', 100)
 so('ttimeoutlen', 10)
+-- so('bg', 'light')
+-- vim.o.spelllang = 'en'
+-- vim.o.sps = 'best, 9'
+vim.o.sw = 2
+vim.o.tabstop = 2
+vim.o.sts = 0
 vim.o.signcolumn = 'no'
 vim.o.hidden = true
-vim.o.number = true
-vim.o.rnu = true
-vim.call('matchadd', 'ColorColumn', "\\%81v", 3)
+vim.o.ignorecase = true
+-- vim.o.number = false
+-- vim.o.rnu = true
+vim.call('matchadd', 'WarningMsg', "\\%81v", 3)
+
+-- vimwiki
+vim.api.nvim_set_var('vimwiki_list', { {
+  path = '~/Documents/vimwiki',  
+  -- syntax = 'markdown',
+  -- ext = '.md'
+} })
   
--- MAPPING
+-- MAPPINGS
 local sk = vim.api.nvim_set_keymap
 
 sk('i', 'jj', '<ESC>', { noremap = true, silent = true })
@@ -50,3 +76,10 @@ sk('n', '+', '<C-W>+', { noremap = false, silent = true })
 sk('n', '-', '<C-W>-', { noremap = false, silent = true })
 sk('n', '<M-w>', ':bd!<CR>', { noremap = false, silent = true }) 
 
+-- fzf
+sk('n', ',t', ':Files<CR>', { noremap = true, silent = true })
+sk('n', "'", ':Buffers<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_var('fzf_preview_window', 'right:50%:bottom')
+
+-- emmit
+vim.api.nvim_set_var('user_emmet_leader_key', '<C-A>')

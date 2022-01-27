@@ -44,7 +44,7 @@ let s:voidGray1 = {'gui': '#3E3D32', 'cterm256': '237'}
 let s:voidGray2 = {'gui': '#49483E', 'cterm256': '239'}
 let s:voidGray3 = {'gui': '#6B6B6B', 'cterm256': '242'}
 let s:voidGray4 = {'gui': '#B0B0B0', 'cterm256': '249'}
-let s:voidSteel = {'gui': '#d9d9d9', 'cterm256': '0'}
+let s:voidSteel = {'gui': '#d9d9d9', 'cterm256': '251'}
 let s:voidBlue = {'gui': '#699B9B', 'cterm256': '109'}
 let s:voidGreen = {'gui': '#569F7A', 'cterm256': '72'}
 let s:voidGold = {'gui': '#8E700B', 'cterm256': '136'}
@@ -53,11 +53,11 @@ let s:voidRed2 = {'gui': '#FF0000', 'cterm256': '196'}
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 
 let colorColumn = {'gui': 'white', 'cterm256': '3'}
-let lineNr = {'gui': 'white', 'cterm256': '0'} 
+let lineNr = {'gui': 'white', 'cterm256': '251'} 
 let cursorLineNrFG = {'gui': 'white', 'cterm256': '234'}
 let cursorLineNrBG = {'gui': 'white', 'cterm256': '250'}
-let nonText = {'gui': 'white', 'cterm256': '0'}
-let visual = {'gui': 'white', 'cterm256': '250'} 
+let nonText = {'gui': 'white', 'cterm256': '251'}
+let visual = {'gui': 'white', 'cterm256': '248'} 
 let searchFG = {'gui': 'white', 'cterm256': '232'} 
 let searchBG = {'gui': 'white', 'cterm256': '183'} 
 
