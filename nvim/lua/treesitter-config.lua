@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
   sync_install = false,
   ignore_install = { "" },
   highlight = {
-    enable = true,
+    enable = false,
     disable = { "" },
   },
   indent = {

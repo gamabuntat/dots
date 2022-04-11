@@ -4,8 +4,8 @@
 #define MOD Mod4Mask
 
 const char* menu[]    = {"dmenu_run", "-fn", "Unifont-12", "-nb", "#1C1C1C", "-sf", "#D0D0D0", "-sb", "#464646", "-nf", "#D0D0D0", 0};
-const char* term[]    = {"urxvt", "-geometry", "120x36", "-b", "40", 0};
-const char* smallTerm[] = {"urxvt", "-geometry", "90x36", "-b", "40", 0};
+const char* term[]    = {"urxvt", 0};
+const char* smallTerm[] = {"kitty", 0};
 const char* scrot[]   = {"scr",            0};
 const char* briup[]   = {"xbacklight", "-inc", "10", 0};
 const char* bridown[] = {"xbacklight", "-dec", "10", 0};

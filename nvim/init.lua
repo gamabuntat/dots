@@ -1,13 +1,16 @@
 -- COLORS
 -- vim.cmd 'colo fogbell_light'
--- vim.cmd 'colo fogbell'
+vim.cmd 'colo NeoSolarized'
 -- vim.cmd 'colo 256_noir'
 -- vim.cmd 'colo spacecamp'
 -- vim.cmd 'colo PaperColor'
-vim.g.tokyonight_style = "day"
 -- vim.g.tokyonight_style = "night"
-vim.g.tokyonight_transparent = true
-vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_transparent = true
+-- vim.cmd[[colorscheme tokyonight]]
+-- local catppuccin = require("catppuccin")
+-- catppuccin.setup({
+--     transparent_background = true,
+-- })
 -- vim.cmd[[colorscheme catppuccin]]
 
 require('plugins')
@@ -24,6 +27,7 @@ require('ale-config')
 require('kommentary-config')
 require('treesitter-config')
 require('stay-centered')
+-- require('prettier-config')
 
 -- SETUP
 local so = vim.api.nvim_set_option
@@ -33,31 +37,35 @@ so('wb', false)
 so('swf', false)
 so('cot', 'menu,menuone,noselect')
 so('clipboard', 'unnamedplus')
-so('expandtab', true)
-so('laststatus', 2)
-so('shiftwidth', 2)
 so('updatetime', 100)
 so('ttimeoutlen', 10)
 -- so('bg', 'light')
 -- vim.o.spelllang = 'en'
 -- vim.o.sps = 'best, 9'
-vim.o.sw = 2
-vim.o.tabstop = 2
+vim.o.expandtab = true
+vim.o.sw = 4
+-- vim.o.tabstop = 4
 vim.o.sts = 0
+vim.o.list = true
 vim.o.signcolumn = 'no'
 vim.o.hidden = true
 vim.o.ignorecase = true
+vim.o.termguicolors = true
+-- vim.o.cursorline = true
 -- vim.o.number = false
 -- vim.o.rnu = true
 vim.call('matchadd', 'WarningMsg', "\\%81v", 3)
 
--- vimwiki
-vim.api.nvim_set_var('vimwiki_list', { {
-  path = '~/Documents/vimwiki',  
-  -- syntax = 'markdown',
-  -- ext = '.md'
-} })
-  
+-- prettier
+vim.api.nvim_exec(
+  [[
+  :command -nargs=1 Pcli :PrettierCli --config ~/.prettierrc --write <args>
+  ]],
+  false
+)
+vim.api.nvim_set_var('prettier#exec_cmd_path', '~/.local/share/nvim/site/pack/packer/start/vim-prettier/node_modul es/.bin/prettier')
+vim.api.nvim_set_var('prettier#config#parser', 'typescript')
+
 -- MAPPINGS
 local sk = vim.api.nvim_set_keymap
 

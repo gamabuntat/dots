@@ -39,6 +39,9 @@ return require('packer').startup(function()
   use 'digitaltoad/vim-pug'
   use 'arnamak/stay-centered.nvim'
 
+  -- prettier
+  use 'prettier/vim-prettier'
+
   -- javascript
   -- use 'pangloss/vim-javascript'
   -- use 'peitalin/vim-jsx-typescript'
@@ -52,6 +55,7 @@ return require('packer').startup(function()
     as = "catppuccin"
   })
   use 'NLKNguyen/papercolor-theme'
+  use 'shaunsingh/solarized.nvim'
 
   --haskell???
   use 'neovimhaskell/haskell-vim'

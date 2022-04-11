@@ -10,7 +10,7 @@ export ZSH="/home/gamabunta/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="zhann"
 export TYPEWRITTEN_CURSOR="block"
-export TYPEWRITTEN_SYMBOL=">"
+export TYPEWRITTEN_SYMBOL="(◑.◑)"
 export TYPEWRITTEN_GIT_RELATIVE_PATH=false
 ZSH_THEME="typewritten"
 #ZSH_THEME="theunraveler"
@@ -87,6 +87,7 @@ export PATH=/home/gamabunta/myscripts/:$PATH
 export PATH=/home/gamabunta/Downloads/libwebp-1.1.0-linux-x86-64/:$PATH
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+# export NODE_OPTIONS=--openssl-legacy-provider
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -115,10 +116,9 @@ export DISPLAY=:0.0
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lsa="ls -A"
 alias vi="nvim"
-alias fsd="cd ~/metalamp"
-alias school="cd ~/Documents/school"
 alias npxw="rm -r dist; npx webpack"
 alias t="trans -d -b :ru"
+alias prtty="npx prettier --config ~/.prettierrc --write "
 
 #----- GIT -----#
 alias gs='git status '
@@ -144,3 +144,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # android studio
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# proxy
+# export https_proxy="https://147.135.255.62:8139"
+export PATH=$PATH:/home/gamabunta/.spicetify

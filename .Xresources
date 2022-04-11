@@ -22,17 +22,26 @@ Xcursor.theme: El_Capitan_CursorsMODNew
 !URxvt.font: xft: Monaco:style=Regular:size=13, \
 !            xft: CozetteVector:style=Regular
 
-URxvt.font: xft: Comic Mono:style=Normal:size=14, \
-            xft: Apple Color Emoji:style=Regular, \
+
+
+!URxvt.font: xft: Mx437 OlivettiThin 8x16:style=Regular:size=16, \
+!            xft: CozetteVector:style=Regular
+!URxvt.font: xft: Mx437 Cordata PPC\\-21:style=Regular:size=17, \
+!            xft: CozetteVector:style=Regular
+
+URxvt.font: xft: Mx437 IBM Model3x Alt3:style=Regular:size=16, \
             xft: CozetteVector:style=Regular
 
-URxvt.letterSpace: -1
+!URxvt.font: xft: Comic Mono:style=Normal:size=14, \
+!            xft: CozetteVector:style=Regular
+
+URxvt.letterSpace: 0
 URxvt.depth:                      32
-URxvt.geometry:                    140x42
-URxvt.internalBorder:               40
+URxvt.geometry:                    82x28
+URxvt.internalBorder:              20
 !*.foreground:                     #d9d9d9
 !*.background:                     #1C1C1C
-URxvt*scrollBar:                  false
+URxvt*scrollBar:                  true
 URxvt*mouseWheelScrollPage:       false
 URxvt.cursorBlink:                false
 URxvt*saveLines:                  5000
@@ -40,6 +49,7 @@ URxvt*cursorColor:                #8f8a8d
 !URxvt*fading:                     50
 !URxvt*fadeColor:                  #657b83
 URxvt*transparent:                false
+URxvt.intensityStyles:            false
 
 ! Normal copy-paste keybindings without perls
 URxvt.iso14755:                   false
@@ -116,14 +126,10 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 !
 !#define white    #1C1C1C
 !#define bwhite   #4C4C4C
-
 !
-!*.foreground:     white
-!#ifdef background_opacity
-!*.background:     [background_opacity]white
-!#else
-!*.background:     fg
-!#endif
+!
+!!*.foreground:     white
+!!*.background:     fg
 !*.cursorColor:    #528BFF
 !*.underlineColor: yellow
 !
@@ -162,7 +168,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 !--------fogbell---------
 !! Black
-!*.background:     #e6e6e6
+!*.background:     #c6c6c6
 !*.foreground:     #1C1C1C
 !*.background:     #121212
 !*.foreground:     #D0D0D0
@@ -251,7 +257,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 !
 !*foreground: fg
 !*background: black
-
+!
 !! Black
 !*.color0:         black
 !*.color8:         bblack
@@ -288,8 +294,8 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 !*background: #1a1b26
 !*background: #121212
-!*foreground: #c0caf5
-!
+!*foreground: #d9d9d9
+
 !*color0: #15161E
 !*color1: #f7768e
 !*color2: #9ece6a
@@ -310,28 +316,28 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 ! TokyoNight colors for Xresources
 
-*background: #e3e4e8
-*foreground: #3760bf
+!*background: #e3e4e8
+!*foreground: #3760bf
+!
+!*color0: #e9e9ed
+!*color1: #f52a65
+!*color2: #587539
+!*color3: #8c6c3e
+!*color4: #2e7de9
+!*color5: #9854f1
+!*color6: #007197
+!*color7: #6172b0
+!
+!*color8: #a1a6c5
+!*color9: #f52a65
+!*color10: #587539
+!*color11: #8c6c3e
+!*color12: #2e7de9
+!*color13: #9854f1
+!*color14: #007197
+!*color15: #3760bf
 
-*color0: #e9e9ed
-*color1: #f52a65
-*color2: #587539
-*color3: #8c6c3e
-*color4: #2e7de9
-*color5: #9854f1
-*color6: #007197
-*color7: #6172b0
-
-*color8: #a1a6c5
-*color9: #f52a65
-*color10: #587539
-*color11: #8c6c3e
-*color12: #2e7de9
-*color13: #9854f1
-*color14: #007197
-*color15: #3760bf
-
-!! special
+! special
 !*.foreground:   #d0d0d0
 !*.background:   #121212
 !*.cursorColor:  #d0d0d0
@@ -359,3 +365,74 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 !! white
 !*.color7:       #dedede
 !*.color15:      #eeeeee
+
+!catpuccin
+!*background: #121212
+!*foreground: #D9E0EE
+!
+!! Gray
+!*color0: #6E6C7E
+!*color8: #988BA2
+!
+!! Red
+!*color1: #F28FAD
+!*color9: #F28FAD
+!
+!! Green
+!*color2: #ABE9B3
+!*color10: #ABE9B3
+!
+!! Yellow
+!*color3: #FAE3B0
+!*color11:  #FAE3B0
+!
+!! Blue
+!*color4: #96CDFB
+!*color12: #96CDFB
+!
+!! Maguve
+!*color5: #DDB6F2
+!*color13: #DDB6F2
+!
+!! Pink
+!*color6: #F5C2E7
+!*color14: #F5C2E7
+!
+!! Whites
+!*color7: #C3BAC6
+!*color15: #D9E0EE
+!
+!!solarized
+*background: #002b36
+*foreground: #657b83
+!! black dark/light
+*color0: #073642
+*color8: #006680
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
