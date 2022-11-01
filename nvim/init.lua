@@ -1,17 +1,26 @@
 -- COLORS
--- vim.cmd 'colo fogbell_light'
-vim.cmd 'colo NeoSolarized'
--- vim.cmd 'colo 256_noir'
+-- vim.cmd 'colo NeoSolarized'
+-- vim.cmd 'colo tender'
+-- vim.cmd 'colo blue-mood'
+-- vim.cmd 'colo cosmic_latte'
 -- vim.cmd 'colo spacecamp'
--- vim.cmd 'colo PaperColor'
--- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_style = "light"
 -- vim.g.tokyonight_transparent = true
 -- vim.cmd[[colorscheme tokyonight]]
--- local catppuccin = require("catppuccin")
--- catppuccin.setup({
---     transparent_background = true,
--- })
--- vim.cmd[[colorscheme catppuccin]]
+-- vim.cmd 'colorscheme solarized'
+-- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+-- vim.cmd [[colorscheme catppuccin]]
+-- local everblush = require('everblush')
+-- vim.cmd [[colorscheme everblush]]
+vim.cmd 'colo truedark'
+
+-- local success, solarized = pcall(require, 'solarized')
+-- local config = {
+--   mode = 'light', -- dark(default)/light
+--   theme = 'neovim',
+-- }
+-- solarized.setup(config)
+-- vim.cmd 'colorscheme solarized'
 
 require('plugins')
 -- CONFIGS
@@ -21,13 +30,18 @@ require('autotag-config')
 -- require('nvim-ts-autotag').setup({
 --   filetypes = { "html" , "xml", "javascriptreact", "typescriptreact", "tsx", "typescript.tsx" },
 -- })
-require('lsp-config')
 require('cmp-config')
 require('ale-config')
 require('kommentary-config')
 require('treesitter-config')
 require('stay-centered')
+require('telescope-config')
 -- require('prettier-config')
+require('gitblame-config')
+require('lsp-config')
+require("symbols-outline").setup()
+
+require('nvim-autopairs').setup()
 
 -- SETUP
 local so = vim.api.nvim_set_option
@@ -39,7 +53,7 @@ so('cot', 'menu,menuone,noselect')
 so('clipboard', 'unnamedplus')
 so('updatetime', 100)
 so('ttimeoutlen', 10)
--- so('bg', 'light')
+so('bg', 'dark')
 -- vim.o.spelllang = 'en'
 -- vim.o.sps = 'best, 9'
 vim.o.expandtab = true
@@ -50,11 +64,16 @@ vim.o.list = true
 vim.o.signcolumn = 'no'
 vim.o.hidden = true
 vim.o.ignorecase = true
+vim.o.smartcase = true
 vim.o.termguicolors = true
--- vim.o.cursorline = true
+vim.o.cursorline = true
+vim.o.laststatus = 3
+vim.o.stl = '%f %m %= %y [%{&fileformat}] %P %l'
+-- vim.o.bg = 'light'
 -- vim.o.number = false
 -- vim.o.rnu = true
-vim.call('matchadd', 'WarningMsg', "\\%81v", 3)
+-- vim.call('matchadd', 'WarningMsg', "\\%81v", 3)
+require 'colorizer'.setup()
 
 -- prettier
 vim.api.nvim_exec(
@@ -69,6 +88,10 @@ vim.api.nvim_set_var('prettier#config#parser', 'typescript')
 -- MAPPINGS
 local sk = vim.api.nvim_set_keymap
 
+-- duck
+vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
+vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+
 sk('i', 'jj', '<ESC>', { noremap = true, silent = true })
 sk('n', 'j', 'gj', { noremap = true, silent = true })
 sk('n', 'k', 'gk', { noremap = true, silent = true })
@@ -82,12 +105,56 @@ sk('n', '<C-L>', '<C-W>l', { noremap = false, silent = true })
 sk('n', '=', '<C-W>=', { noremap = false, silent = true })
 sk('n', '+', '<C-W>+', { noremap = false, silent = true })
 sk('n', '-', '<C-W>-', { noremap = false, silent = true })
-sk('n', '<M-w>', ':bd!<CR>', { noremap = false, silent = true }) 
+sk('n', '<M-w>', ':bd!<CR>', { noremap = false, silent = true })
+sk('n', '<leader>f', ':Explore<CR>', { noremap = false, silent = true })
+sk('x', '<Leader>p', '\"_dP', { noremap = false, silent = false })
 
 -- fzf
 sk('n', ',t', ':Files<CR>', { noremap = true, silent = true })
 sk('n', "'", ':Buffers<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_var('fzf_preview_window', 'right:50%:bottom')
+sk('n', "<leader>m", ':Marks<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_var('fzf_preview_window', {})
+
+-- telescope
+sk('n', ',t', ':Telescope find_files hidden=true<CR>', { noremap = true, silent = true })
+sk('n', "'", ':Telescope buffers --sort=get_fzy_sorter<CR>', { noremap = true, silent = true })
+
+-- trouble
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
+  {silent = true, noremap = true}
+)
 
 -- emmit
 vim.api.nvim_set_var('user_emmet_leader_key', '<C-A>')
+
+-- line
+vim.api.nvim_set_var('lightline', {
+    colorscheme = 'nord',
+    active = {
+        left = {
+            {'readonly', 'filename'},
+            {},
+        },
+        right = {
+            {'percent', 'lineinfo'},
+            {'filetype'}
+        },
+    },
+    separator = { left = '▓▒░', right = '░▒▓' },
+    subseparator = { left = '▒', right = '░' }
+})

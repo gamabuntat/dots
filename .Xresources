@@ -7,41 +7,27 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 !Xcursor.theme: Amiga-Classic-Red
-Xcursor.theme: El_Capitan_CursorsMODNew
+Xcursor.theme: macOS-BigSur-White
 
-!URxvt.font: xft: SF Mono:style=Light:size=12, \
-!            xft: CozetteVector:style=Regular
-!URxvt.font: xft: Gohu GohuFont:style=Regular:pixelsize=14
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
+!XTerm.vt100.faceName: creep2:size=22
+XTerm.vt100.font: -b&h-lucidatypewriter-medium-r-normal-sans-17-120-100-100-m-100-iso8859-1
 
-!URxvt.font: -*-terminus-medium-*-*--18-*-*-*-*-*-*-*, \
-!            xft: CozetteVector:style=Regular
+URxvt.font: -*-terminus-bold-*-*-*-17-*-*-*-*-*-*-*
 
-!URxvt.font: xft: Unifont:size=13, \
-!            xft: CozetteVector:style=Regular
-
-!URxvt.font: xft: Monaco:style=Regular:size=13, \
-!            xft: CozetteVector:style=Regular
-
-
-
-!URxvt.font: xft: Mx437 OlivettiThin 8x16:style=Regular:size=16, \
-!            xft: CozetteVector:style=Regular
-!URxvt.font: xft: Mx437 Cordata PPC\\-21:style=Regular:size=17, \
-!            xft: CozetteVector:style=Regular
-
-URxvt.font: xft: Mx437 IBM Model3x Alt3:style=Regular:size=16, \
-            xft: CozetteVector:style=Regular
-
-!URxvt.font: xft: Comic Mono:style=Normal:size=14, \
-!            xft: CozetteVector:style=Regular
-
-URxvt.letterSpace: 0
+URxvt.letterSpace: 1
 URxvt.depth:                      32
-URxvt.geometry:                    82x28
-URxvt.internalBorder:              20
-!*.foreground:                     #d9d9d9
-!*.background:                     #1C1C1C
-URxvt*scrollBar:                  true
+URxvt.geometry:                    82x24
+!URxvt.internalBorder:              20
+!*.background: #fcf5f0
+!*.foreground: #3c0010
+URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt.cursorBlink:                false
 URxvt*saveLines:                  5000
@@ -65,374 +51,38 @@ URxvt.keysym.Shift-Control-Up:    \033[1;6A
 URxvt.keysym.Control-Down:        \033[1;5B
 URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
-!Type
-!#define black    #080808
-!#define bblack   #464646
-!
-!#define red      #626262
-!#define bred     #626262
-!
-!#define yellow   #999999
-!#define byellow  #999999
-!
-!#define green    #868686
-!#define bgreen   #009900
-!
-!#define blue    #00BAFF
-!#define bblue   #767676
-!
-!#define magenta  #E41D91
-!#define bmagenta #FF00AF
-!
-!#define cyan     #949494
-!#define bcyan    #949494
-!
-!#define white    #dddddd
-!#define bwhite   #ffffff
-!
-!#define fg       #464646
-!
-!!*.foreground:     fg
-!!*.background:     white
-!*.cursorColor:    #528BFF
-!*.underlineColor: yellow
-!
+*.foreground: #947e7b
+*.background: #f9faf4
+*.cursorColor: #de8043
 
-!-------------------------- Typewriter light --------------------------
-! Scheme: Typewriter (https://github.com/logico-dev)
+! black
+*.color0: #dbd9da
+*.color8: #cdb7aa
 
-!#define black    #EEEEEE
-!#define bblack   #FFFFFF
-!
-!#define red      #DBDBDB
-!#define bred     #DBDBDB
-!
-!#define yellow   #5A5A5A
-!#define byellow  #5A5A5A
-!
-!! Color 49
-!#define green    #646464
-!#define bgreen   #00FFAF
-!
-!#define blue     #00BAFF
-!#define bblue    #767676
-!
-!#define magenta  #E41D91
-!! Color 199
-!#define bmagenta #FF00AF
-!
-!#define cyan     #949494
-!#define bcyan    #949494
-!
-!#define white    #1C1C1C
-!#define bwhite   #4C4C4C
-!
-!
-!!*.foreground:     white
-!!*.background:     fg
-!*.cursorColor:    #528BFF
-!*.underlineColor: yellow
-!
-!! Black
-!*.color0:         black
-!*.color8:         bblack
-!
-!! Red
-!*.color1:         red
-!*.color9:         bred
-!
-!! Yellow
-!*.color3:         yellow
-!*.color11:        byellow
-!
-!! Green
-!*.color2:         green
-!*.color10:        bgreen
-!
-!! Blue
-!*.color4:         blue
-!*.color12:        bblue
-!
-!! Magenta
-!*.color5:         magenta
-!*.color13:        bmagenta
-!
-!! Cyan
-!*.color6:         cyan
-!*.color14:        bcyan
-!
-!! White
-!*.color7:         white
-!*.color15:        bwhite
+! red
+*.color1: #e46c6d
+*.color9: #d65455
 
+! green
+*.color2: #aecdad
+*.color10: #8cb88b
 
-!--------fogbell---------
-!! Black
-!*.background:     #c6c6c6
-!*.foreground:     #1C1C1C
-!*.background:     #121212
-!*.foreground:     #D0D0D0
-!*.color0:         #1C1C1C
-!*.color8:         #262626
-!! Red
-!*.color1:         #821A1A
-!*.color9:         #FF0000
-!! Yellow
-!*.color3:         #8E700B
-!*.color11:        #cc6600
-!!Green
-!*.color2:         #569F7A
-!*.color10:        #007a00
-!! Blue
-!*.color4:         #699B9B
-!*.color12:        #00007f
-!! Magenta
-!*.color5:         #7f007f
-!*.color13:        #7f007f
-!! Cyan
-!*.color6:         #007f7f
-!*.color14:        #007f7f
-!! White
-!*.color7:         #d6d6d6
-!*.color15:        #ffffff
+! yellow
+*.color3: #d8af60
+*.color11: #c49b4a
 
-!-----SOWM------
+! blue
+*.color4: #819fc1
+*.color12: #6688ad
 
-!#define black    #121212
-!#define bblack   #24292e
-!
-!#define red      #d73a49
-!#define bred     #d73a49
-!
-!#define yellow   #e36209
-!#define byellow  #e36209
-!
-!#define green    #22863a
-!#define bgreen   #22863a
-!
-!#define blue     #032f62
-!#define bblue    #032f62
-!
-!#define magenta  #6f42c1
-!#define bmagenta #6f42c1
-!
-!#define cyan     #005cc5
-!#define bcyan    #005cc5
-!
-!#define white    #B0B0B0
-!#define bwhite   #ffffff
-!
-!#define fg       bblack
-!
-!*foreground: fg
-!*background: #c6c6c6
+! magenta
+*.color5: #b899a8
+*.color13: #a38895
 
-!----BLACKSOWM-----
+! cyan
+*.color6: #68c7c1
+*.color14: #4eb3ac
 
-!#define black    #121212
-!#define bblack   #969696
-!
-!#define red      #d73a49
-!#define bred     #d73a49
-!
-!#define yellow   #e36209
-!#define byellow  #e36209
-!
-!#define green    #22863a
-!#define bgreen   #22863a
-!
-!#define blue     #005cc5
-!#define bblue    #005cc5
-!
-!#define magenta  #6f42c1
-!#define bmagenta #6f42c1
-!
-!#define cyan     #00BAFF
-!#define bcyan    #00BAFF
-!
-!#define white    #B0B0B0
-!#define bwhite   #D0D0D0
-!
-!#define fg       bwhite
-!
-!*foreground: fg
-!*background: black
-!
-!! Black
-!*.color0:         black
-!*.color8:         bblack
-!
-!! Red
-!*.color1:         red
-!*.color9:         bred
-!
-!! Yellow
-!*.color3:         yellow
-!*.color11:        byellow
-!
-!! Green
-!*.color2:         green
-!*.color10:        bgreen
-!
-!! Blue
-!*.color4:         blue
-!*.color12:        bblue
-!
-!! Magenta
-!*.color5:         magenta
-!*.color13:        bmagenta
-!
-!! Cyan
-!*.color6:         cyan
-!*.color14:        bcyan
-!
-!! White
-!*.color7:         white
-!*.color15:        bwhite
-
-! TokyoNight colors for Xresources
-
-!*background: #1a1b26
-!*background: #121212
-!*foreground: #d9d9d9
-
-!*color0: #15161E
-!*color1: #f7768e
-!*color2: #9ece6a
-!*color3: #e0af68
-!*color4: #7aa2f7
-!*color5: #bb9af7
-!*color6: #7dcfff
-!*color7: #a9b1d6
-!
-!*color8: #414868
-!*color9: #f7768e
-!*color10: #9ece6a
-!*color11: #e0af68
-!*color12: #7aa2f7
-!*color13: #bb9af7
-!*color14: #7dcfff
-!*color15: #c0caf5
-
-! TokyoNight colors for Xresources
-
-!*background: #e3e4e8
-!*foreground: #3760bf
-!
-!*color0: #e9e9ed
-!*color1: #f52a65
-!*color2: #587539
-!*color3: #8c6c3e
-!*color4: #2e7de9
-!*color5: #9854f1
-!*color6: #007197
-!*color7: #6172b0
-!
-!*color8: #a1a6c5
-!*color9: #f52a65
-!*color10: #587539
-!*color11: #8c6c3e
-!*color12: #2e7de9
-!*color13: #9854f1
-!*color14: #007197
-!*color15: #3760bf
-
-! special
-!*.foreground:   #d0d0d0
-!*.background:   #121212
-!*.cursorColor:  #d0d0d0
-!! black
-!*.color0:       #282828
-!*.color8:       #666666
-!! red
-!*.color1:       #d71a1a
-!*.color9:       #ff0000
-!! green
-!*.color2:       #57ba37
-!*.color10:      #d8fa3b
-!! yellow
-!*.color3:       #f0d50c
-!*.color11:      #e7c547
-!! blue
-!*.color4:       #91aadf
-!*.color12:      #b7cbf4
-!! magenta
-!*.color5:       #cf73e6
-!*.color13:      #b77ee0
-!! cyan
-!*.color6:       #b7cbf4
-!*.color14:      #a9c1de
-!! white
-!*.color7:       #dedede
-!*.color15:      #eeeeee
-
-!catpuccin
-!*background: #121212
-!*foreground: #D9E0EE
-!
-!! Gray
-!*color0: #6E6C7E
-!*color8: #988BA2
-!
-!! Red
-!*color1: #F28FAD
-!*color9: #F28FAD
-!
-!! Green
-!*color2: #ABE9B3
-!*color10: #ABE9B3
-!
-!! Yellow
-!*color3: #FAE3B0
-!*color11:  #FAE3B0
-!
-!! Blue
-!*color4: #96CDFB
-!*color12: #96CDFB
-!
-!! Maguve
-!*color5: #DDB6F2
-!*color13: #DDB6F2
-!
-!! Pink
-!*color6: #F5C2E7
-!*color14: #F5C2E7
-!
-!! Whites
-!*color7: #C3BAC6
-!*color15: #D9E0EE
-!
-!!solarized
-*background: #002b36
-*foreground: #657b83
-!! black dark/light
-*color0: #073642
-*color8: #006680
-
-!! red dark/light
-*color1: #dc322f
-*color9: #cb4b16
-
-!! green dark/light
-*color2: #859900
-*color10: #586e75
-
-!! yellow dark/light
-*color3: #b58900
-*color11: #657b83
-
-!! blue dark/light
-*color4: #268bd2
-*color12: #839496
-
-!! magenta dark/light
-*color5: #d33682
-*color13: #6c71c4
-
-!! cyan dark/light
-*color6: #2aa198
-*color14: #93a1a1
-
-!! white dark/light
-*color7: #eee8d5
-*color15: #fdf6e3
+! white
+*.color7: #526b6e
+*.color15: #3b4d4f

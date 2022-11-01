@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Retrowin
+Type=X-GNOME-Metatheme
+Encoding=UTF-8
+GtkTheme=Adwaita-dark
+MetacityTheme=Retriwin
+IconTheme=Retriwin-dark
+CursorTheme=Retriwin-dark
+CursorSize=24

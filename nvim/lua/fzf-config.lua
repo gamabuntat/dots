@@ -5,7 +5,7 @@ require'fzf-lua'.setup {
     ["fg"] = { "fg", "Normal" },
     ["bg"] = { "bg", "Normal" },
     ["fg+"] = { "fg", "Normal" },
-    ["bg+"] = { "bg", "Normal" },  
+    ["bg+"] = { "bg", "Normal" },
   },
   winopts = {
     preview = {
@@ -22,4 +22,3 @@ vim.api.nvim_set_keymap('n', ',t',
 vim.api.nvim_set_keymap('n', "'",
   "<cmd>lua require('fzf-lua').buffers()<CR>",
   { noremap = true, silent = true })
-

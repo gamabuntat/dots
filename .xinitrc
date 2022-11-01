@@ -51,16 +51,15 @@ fi
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-xset +fp /usr/share/fonts/local &
-xset fp rehash &
-xset -b &
-xfce4-power-manager &
-picom --experimental-backends --backend glx -b &
-feh --image-bg "#a9ced1" --bg-center ~/Images/vasilii-kandinskii-vid-murnau-kartina-abstraktsionizm-dom-do.jpg
+# xset +fp /usr/share/fonts/local &
+# xset fp rehash &
+# xset -b &
+# xfce4-power-manager &
+# picom --experimental-backends --backend glx -b &
+# feh --image-bg "#a9ced1" --bg-center ~/Images/ino.jpg
+# conky &
+
 #hsetroot -solid '#a9ced1' &
-#hsetroot -solid '#e0ffff' &
-#hsetroot -solid '#ccc' &
-conky &
 #/home/gamabunta/.config/polybar/launch.sh &
 #~/dwm/status.sh &
 #loop
@@ -71,4 +70,9 @@ conky &
 #    sowm >/dev/null 2>&1
 #done
 
-exec sowm
+exec openbox-session
+# exec i3
+# exec 2bwm
+# exec sowm
+# exec jwm
+# exec ratpoison
