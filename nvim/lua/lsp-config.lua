@@ -1,3 +1,5 @@
+local nvim_lsp = require('lspconfig')
+
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = false,
     signs = true,
@@ -9,21 +11,22 @@ local _border = "single"
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover, {
-        border = _border,
-    }
+    border = _border,
+}
 )
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
-        border = _border
-    }
+    border = _border
+}
 )
 
 vim.diagnostic.config {
     float = { border = _border }
 }
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -32,7 +35,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -62,15 +65,3 @@ for _, lsp in ipairs(servers) do
         on_attach = on_attach
     }
 end
-
-require'lspconfig'.eslint.setup({
-  --[[ on_attach = function(_, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-  end, ]]
-  --[[ settings = {
-    run = "onSave"
-  } ]]
-})

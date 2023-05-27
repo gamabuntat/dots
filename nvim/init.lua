@@ -1,2 +1,2 @@
-vim.cmd 'colo truedark'
+-- vim.cmd 'colo truedark'
 require('gamabunta')

@@ -20,7 +20,7 @@ xset fp rehash &
 xset -b &
 xfce4-power-manager &
 picom --experimental-backends --backend glx -b &
-(sleep 3s && feh --image-bg "#a9ced1" --bg-tile ~/Images/v.jpg) &
+(sleep 3s && feh --image-bg "#a9ced1" --bg-tile ~/Images/edward-hopper-1914-soir-bleu-crop.jpeg) &
 xfce4-panel &
 # conky &
 # tint2 &

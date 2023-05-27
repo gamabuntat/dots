@@ -1,3 +1,4 @@
+-- Setup nvim-cmp.
 local cmp = require'cmp'
 
 local feedkey = function(key, mode)
@@ -8,22 +9,21 @@ end
 
 cmp.setup({
   snippet = {
-    expand = function(args) 
-        vim.fn["vsnip#anonymous"](args.body)
-    end,
+    expand = function(args) end,
   },
   window = {
-      -- completion = cmp.config.window.bordered()
-  },
+      completion = cmp.config.window.bordered()
+  }
   mapping = {
     ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
-      -- behavior = cmp.ConfirmBehavior.Replace,
+      behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     })
   },
+
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
