@@ -84,10 +84,16 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=/usr/local/bin/node:$PATH
 export PATH=/home/gamabunta/myscripts/:$PATH
+export PATH=/home/gamabunta/myscripts/icewm/:$PATH
+export PATH=~/Documents/school/node/vocabulary/:$PATH
 export PATH=/home/gamabunta/Downloads/libwebp-1.1.0-linux-x86-64/:$PATH
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export NODE_OPTIONS=--openssl-legacy-provider
+
+export DENO_INSTALL="/home/gamabunta/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -116,10 +122,12 @@ export DISPLAY=:0.0
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lsa="ls -A"
 alias vi="nvim"
+alias v="fd --type f --hidden --exclude .git | fzf | xargs nvim"
 alias npxw="rm -r dist; npx webpack"
 alias t="trans -d -b :ru"
 alias prtty="npx prettier --config ~/.prettierrc --write "
 alias rm="rm -i"
+alias cdt="cd `tmux display-message -p '#{session_path}'`"
 
 #----- GIT -----#
 alias gs='git status '
@@ -137,12 +145,12 @@ alias ghist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
 ###FZF###
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore --files'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --border"
+export FZF_DEFAULT_OPTS="--inline-info --border"
     # --color 'fg:#4C4F69,fg+:#4C4F69,bg+:#bcc0cc,hl+:#cc4400,gutter:#cccccc'"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # android studio
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -150,3 +158,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # proxy
 # export https_proxy="https://147.135.255.62:8139"
 export PATH=$PATH:/home/gamabunta/.spicetify
+
+# z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
