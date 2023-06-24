@@ -1,0 +1,20 @@
+#!/bin/sh
+
+template="import type { $1Props } from './$1.types';
+
+export function $1({}: $1Props) {
+  return ();
+};";
+
+type_template="export type $1Props = {}"
+
+index_template="export { $1 } from './$1'"
+
+mkdir $1;
+cd $1;
+touch $1.tsx;
+printf '%s' "$template" > $1.tsx;
+touch $1.types.ts;
+printf '%s' "$type_template" > $1.types.ts;
+touch index.ts;
+printf '%s' "$index_template" > index.ts;

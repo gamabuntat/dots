@@ -22,9 +22,9 @@ fi
 mute=$(pactl get-sink-mute 0)
 
 if [[ $mute == *"yes" || $volumee -eq 0 ]]; then
-  dunstify -a "changeVolume" -u low -r "$msgId" "Volume mute: " -h int:value:${volumee}
+  dunstify -a "changeVolume" -r "$msgId" "Volume mute: " -h int:value:${volumee}
 else
-  dunstify -a "changeVolume" -u low -r "$msgId" "Volume [${volumee}]: " -h int:value:${volumee}
+  dunstify -a "changeVolume" -r "$msgId" "Volume [${volumee}]: " -h int:value:${volumee}
 fi
 
 canberra-gtk-play -i audio-volume-change

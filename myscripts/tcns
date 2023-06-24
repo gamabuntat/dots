@@ -1,0 +1,5 @@
+#!/bin/sh
+
+name=$1;
+[[ -z "$1" ]] && name=${PWD##*/}
+tmux new-session -c `pwd` -s $name

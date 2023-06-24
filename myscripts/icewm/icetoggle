@@ -1,0 +1,3 @@
+#!/bin/sh
+
+if icesh -f prop _NET_WM_STATE | rg -i maximized; then icesh -f restore; else icesh -f maximize; fi
